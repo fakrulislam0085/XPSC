@@ -29,49 +29,52 @@ int main()
         }
         else
         {
-        int posToInsert = -1;
-        for(int i=0; i<s.size()-1; i++)
-        {
-            for(int j=i+1; j<s.size(); j++)
+            int posToInsert = -1;
+            bool hasDuplicate = false;
+            for(int i=0; i<s.size()-1; i++)
             {
-                if(s[i] == s[j])
+                for(int j=i+1; j<s.size(); j++)
                 {
-                    posToInsert = j;
-                    break;
+                    if(s[i] == s[j])
+                    {
+                        posToInsert = j;
+                        hasDuplicate = true;
+                        break;
+                    }
                 }
+                if(hasDuplicate)
+                    break;
             }
-            if (posToInsert != -1) break; 
-        }
         
-        if(posToInsert == -1)
-        {
-            char charToInsert = ' ';
-            for(char c='a'; c<='z'; c++)
+            if(!hasDuplicate)
             {
-                if(c != s[s.size()])
+                char charToInsert = ' ';
+                for(char c='a'; c<='z'; c++)
                 {
-                    charToInsert = c;
-                    break;
+                    if(c != s[s.size()-1])
+                    {
+                        charToInsert = c;
+                        break;
+                    }
                 }
+                s.insert(s.size(), 1, charToInsert);
+                cout << s << '\n';
             }
-            s.insert(s.size(), 1, charToInsert);
-            cout << s << '\n';
-        }
-        else
-        {
-            char charToInsert = ' ';
-            for(char c='a'; c<='z'; c++)
+            else
             {
-                if(c != s[posToInsert])
+                char charToInsert = ' ';
+                for(char c='a'; c<='z'; c++)
                 {
-                    charToInsert = c;
-                    break;
+                    if(c != s[posToInsert])
+                    {
+                        charToInsert = c;
+                        break;
+                    }
                 }
+                s.insert(posToInsert, 1, charToInsert);
+                cout << s << '\n';
             }
-            s.insert(posToInsert, 1, charToInsert);
-            cout << s << '\n';
         }
-    }
     }
     return 0;
 }
