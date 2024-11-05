@@ -31,13 +31,11 @@ int main()
         {
             int posToInsert = -1;
             bool hasDuplicate = false;
-            for(int i=0; i<s.size()-1; i++)
+            for(int i=1; i<s.size()-1; i++)
             {
-                for(int j=i+1; j<s.size(); j++)
-                {
-                    if(s[i] == s[j])
+                 if(s[i] == s[i-1])
                     {
-                        posToInsert = j;
+                        posToInsert = i;
                         hasDuplicate = true;
                         break;
                     }
