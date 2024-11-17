@@ -1,3 +1,5 @@
+#Educational Codeforces Round 168 (Rated for Div. 2)
+#Problem:1997A - Strong Password
 #include <bits/stdc++.h>
 using namespace std;
 int main()
