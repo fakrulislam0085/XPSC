@@ -1,3 +1,5 @@
+#Codeforces Round 817 (Div. 4)
+#Problem:	1722C - Word Game
 #include <bits/stdc++.h>
 using namespace std;
 int main()
